@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Country API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" async defer></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#"
+            >Home <span class="sr-only">(current)</span></a
+          >
+          <a class="nav-item nav-link" href="#">Features</a>
+          <a class="nav-item nav-link" href="#">Pricing</a>
+          <a
+            class="nav-item nav-link disabled"
+            href="#"
+            tabindex="-1"
+            aria-disabled="true"
+            >Disabled</a
+          >
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row justify-content-between">
+        <input
+          type="text"
+          class="m-4 p-2"
+          name="search"
+          id="search"
+          placeholder="Search for a country..."
+        />
+        <div class="dropdown m-4">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Filter By Region
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Africa</a>
+            <a class="dropdown-item" href="#">America</a>
+            <a class="dropdown-item" href="#">Asia</a>
+            <a class="dropdown-item" href="#">Europe</a>
+            <a class="dropdown-item" href="#">Oceania</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid country-container">
+      <div class="row justify-content-center"></div>
+    </div>
+  </body>
+</html>
