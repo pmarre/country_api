@@ -20,7 +20,9 @@ $(document).ready(function() {
             "<li>Population: " +
             country.population +
             "</li>" +
-            "<li>Region: " +
+            "<li class='" +
+            country.region +
+            "'>Region: " +
             country.region +
             "</li>" +
             "<li>Capital: " +
@@ -30,19 +32,36 @@ $(document).ready(function() {
             "</div>" +
             "</div>"
         );
-      });
 
-      $("#search").on("keyup", function() {
-        let value = $(this)
-          .val()
-          .toLowerCase();
-        $(".card").filter(function() {
-          $(this).toggle(
-            $(this)
-              .text()
-              .toLowerCase()
-              .indexOf(value) > -1
-          );
+        $(".dropdown-menu a").click(function() {
+          let value = $(this).text();
+          if ("." + country.region !== "." + value) {
+            $("." + country.region)
+              .closest(".card")
+              .addClass("hide-card")
+              .removeClass("show-card");
+          } else if ("." + country.region === value) {
+            $("." + country.region)
+              .closest(".card")
+              .addClass("show-card")
+              .removeClass("hide-card");
+          } else {
+            $(".card").removeClass("show-card", "hide-card");
+          }
+        });
+
+        $("#search").on("keyup", function() {
+          let value = $(this)
+            .val()
+            .toLowerCase();
+          $(".card").filter(function() {
+            $(this).toggle(
+              $(this)
+                .text()
+                .toLowerCase()
+                .indexOf(value) > -1
+            );
+          });
         });
       });
     }

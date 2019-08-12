@@ -3,7 +3,7 @@
   <head>
     <title>Country API</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
@@ -32,14 +32,6 @@
             >Home <span class="sr-only">(current)</span></a
           >
           <a class="nav-item nav-link" href="#">Features</a>
-          <a class="nav-item nav-link" href="#">Pricing</a>
-          <a
-            class="nav-item nav-link disabled"
-            href="#"
-            tabindex="-1"
-            aria-disabled="true"
-            >Disabled</a
-          >
         </div>
       </div>
     </nav>
@@ -47,7 +39,7 @@
       <div class="row justify-content-between">
         <input
           type="text"
-          class="m-4 p-2"
+          class="m-4 p-2 col-sm-4"
           name="search"
           id="search"
           placeholder="Search for a country..."
@@ -65,10 +57,11 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">Africa</a>
-            <a class="dropdown-item" href="#">America</a>
+            <a class="dropdown-item" href="#">Americas</a>
             <a class="dropdown-item" href="#">Asia</a>
             <a class="dropdown-item" href="#">Europe</a>
             <a class="dropdown-item" href="#">Oceania</a>
+            <a class="dropdown-item" href="#">Clear</a>
           </div>
         </div>
       </div>
@@ -76,5 +69,15 @@
     <div class="container-fluid country-container">
       <div class="row justify-content-center"></div>
     </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
