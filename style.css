@@ -4,10 +4,97 @@
   transform: scale(1.05);
 }
 
+#search {
+  border: none;
+  background-color: gainsboro;
+}
+
 .hide-card {
-  display: none;
+  display: none !important;
+  border: 1px solid black;
 }
 
 .show-card {
   display: block;
+}
+
+.light-icon {
+  visibility: hidden;
+}
+
+.dark-icon,
+.light-icon {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
+  background-color: #121212;
+  color: #fff;
+}
+
+.dark-text,
+.light-text {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.fa-moon,
+.fa-sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+}
+
+.dark-icon:hover,
+.light-icon:hover {
+  width: 130px;
+  border-radius: 25px;
+  transition: 0.2s all linear;
+  cursor: pointer;
+}
+
+.dark-icon:hover .dark-text,
+.light-icon:hover .light-text {
+  visibility: visible;
+  line-height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  align-self: center;
+  opacity: 1;
+  transition: 0.2s opacity ease-in 0.1s;
+}
+
+.dark-icon:hover .fa-moon,
+.dark-icon:hover .fa-sun {
+  left: 20%;
+}
+
+.dark-mode-primary-bg {
+  background-color: #121212 !important;
+  color: #fff !important;
+}
+
+.dark-mode-secondary-bg {
+  background-color: #262626 !important;
+  color: #fff !important;
+}
+
+.dark-mode-text {
+  color: #fff !important;
+}
+
+.active-color-mode {
+  visibility: hidden !important;
+}
+
+.active-color-mode p {
+  visibility: hidden !important;
 }

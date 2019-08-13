@@ -6,7 +6,9 @@ $(document).ready(function() {
     success: function(data) {
       $.each(data, function(i, country) {
         $(".country-container .row").append(
-          '<div class="card m-4" style="width: 18rem;">' +
+          '<div class="card m-4 ' +
+            country.region +
+            '" style="width: 18rem;">' +
             '<img src="' +
             country.flag +
             '" class="card-img-top" alt="' +
@@ -20,9 +22,7 @@ $(document).ready(function() {
             "<li>Population: " +
             country.population +
             "</li>" +
-            "<li class='" +
-            country.region +
-            "'>Region: " +
+            "<li>Region: " +
             country.region +
             "</li>" +
             "<li>Capital: " +
@@ -32,23 +32,6 @@ $(document).ready(function() {
             "</div>" +
             "</div>"
         );
-
-        $(".dropdown-menu a").click(function() {
-          let value = $(this).text();
-          if ("." + country.region !== "." + value) {
-            $("." + country.region)
-              .closest(".card")
-              .addClass("hide-card")
-              .removeClass("show-card");
-          } else if ("." + country.region === value) {
-            $("." + country.region)
-              .closest(".card")
-              .addClass("show-card")
-              .removeClass("hide-card");
-          } else {
-            $(".card").removeClass("show-card", "hide-card");
-          }
-        });
 
         $("#search").on("keyup", function() {
           let value = $(this)
@@ -64,6 +47,39 @@ $(document).ready(function() {
           });
         });
       });
+
+      $(".dropdown-item").click(function() {
+        "use strict";
+        let value = $(this).text();
+
+        $.each(data, function(j, obj) {
+          if ($("div.card").hasClass(obj.region) === false) {
+            console.log(obj.region);
+            // if ($(".card").hasClass(value) !== "." + value) {
+            $(this).addClass(".hide-card");
+            // console.log(valueClass);
+            // }
+          }
+        });
+      });
+    }
+  });
+
+  $(".dark-icon").click(function() {
+    $("body").toggleClass("dark-mode-primary-bg");
+    $(".card, #search").toggleClass("dark-mode-secondary-bg");
+    $(".navbar")
+      .toggleClass("bg-light")
+      .toggleClass("dark-mode-secondary-bg");
+    $(".nav-item, .navbar-brand").toggleClass("dark-mode-text");
+
+    $(".dark-icon i")
+      .toggleClass("far fa-moon")
+      .toggleClass("fa fa-sun");
+    if ($(".dark-icon p").text() === "Light Mode") {
+      $(".dark-icon p").text("Dark Mode");
+    } else {
+      $(".dark-icon p").text("Light Mode");
     }
   });
 });
