@@ -33,6 +33,7 @@ $(document).ready(function() {
             "</div>"
         );
 
+        // Search for country
         $("#search").on("keyup", function() {
           let value = $(this)
             .val()
@@ -48,23 +49,22 @@ $(document).ready(function() {
         });
       });
 
+      // Filter Cards By Region
       $(".dropdown-item").click(function() {
-        "use strict";
-        let value = $(this).text();
-
-        $.each(data, function(j, obj) {
-          if ($("div.card").hasClass(obj.region) === false) {
-            console.log(obj.region);
-            // if ($(".card").hasClass(value) !== "." + value) {
-            $(this).addClass(".hide-card");
-            // console.log(valueClass);
-            // }
-          }
-        });
+        $(".card").removeClass("d-none");
+        let filter = $(this).text(); // get the value of the input, which we filter on
+        console.log(filter);
+        $(".country-container .row")
+          .find('.card:not(:contains("' + filter + '"))')
+          .addClass("d-none");
+        if (filter === "Clear") {
+          $(".card").removeClass("d-none");
+        }
       });
     }
   });
 
+  // Toggle Dark Mode
   $(".dark-icon").click(function() {
     $("body").toggleClass("dark-mode-primary-bg");
     $(".card, #search").toggleClass("dark-mode-secondary-bg");
