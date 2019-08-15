@@ -98,3 +98,46 @@
 .active-color-mode p {
   visibility: hidden !important;
 }
+
+.flip-card {
+  cursor: pointer;
+  background-color: transparent;
+  perspective: 1000px;
+  width: 300px;
+  height: 400px;
+  position: relative;
+  /* backface-visibility: hidden */
+}
+
+.flip-card-inner {
+  position: relative !important;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  width: 300px;
+  height: 400px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.front-card,
+.card-back {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  top: 0;
+  left: 0;
+}
+
+.card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}

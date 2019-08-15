@@ -6,7 +6,7 @@ $(document).ready(function() {
     success: function(data) {
       $.each(data, function(i, country) {
         $(".country-container .row").append(
-          '<div class="card m-4 ' +
+          '<div class="flip-card"><div class="flip-card-inner"><div class="card m-4 front-card ' +
             country.region +
             '" style="width: 18rem;">' +
             '<img src="' +
@@ -30,7 +30,9 @@ $(document).ready(function() {
             "</li>" +
             "</ul>" +
             "</div>" +
-            "</div>"
+            "</div>" +
+            "<div class='card m-4 card-back'>BACK</div>" +
+            "</div></div>"
         );
 
         // Search for country
